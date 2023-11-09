@@ -3,11 +3,10 @@ package main
 import "fmt"
 
 /*
-	leetcode: Accepted
-	Runtime: 58ms   (Beats 37.21%of users with Go)
-	Memory : 7.37MB (Beats 95.88%of users with Go)
+STATUS: Accepted
+Runtime: 52ms (Beats 44.80%of users with Go)
+Memory: 7.18MB (Beats 99.12%of users with Go)
 */
-
 /*
 	Input: nums = [-1,0,1,2,-1,-4]
 	Output: [[-1,-1,2],[-1,0,1]]
@@ -40,7 +39,7 @@ func threeSum(nums []int) [][]int {
 			}
 			temp := nums[i] + nums[j] + nums[k]
 			if temp == 0 {
-				if j > i+1 && nums[j] == nums[j-1] {
+				if j <= i+1 || nums[j] != nums[j-1] {
 
 				} else {
 					s = append(s, []int{nums[i], nums[j], nums[k]})
@@ -60,7 +59,8 @@ func threeSum(nums []int) [][]int {
 }
 func main() {
 	//num := []int{-1, 0, 1, 2, -1, -4, -2, -3, 3, 0, 4}
-	num := []int{0, 0, 0, 0}
+	//num := []int{0, 0, 0, 0}
+	num := []int{-1, 0, 1, 2, -1, -4}
 	s := threeSum(num)
 	fmt.Print(s)
 }
