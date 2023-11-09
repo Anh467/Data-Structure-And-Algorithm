@@ -41,25 +41,25 @@ import "fmt"
 	Memory: 6.41MB (Beats 51.85%of users with Go)
 */
 func countHomogenous(s string) int {
-	mod := 1000000007
-	s = s + "$"
 	sum := 0
+	mod := 1000000007
 	index := 1
+	s = s + "$"
 	for i := 1; i < len(s); i++ {
 		if s[i] != s[i-1] {
-			sum += (index * (index + 1)) / 2
+			sum += index * (index + 1) / 2
 			index = 1
 			continue
 		}
 		index += 1
 	}
-	return int(sum % (mod))
+	return int(sum % mod)
 }
 func main() {
 	//hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhdllljbbbbiiiiiiiiiipppaaaaaaaqmmsssssspkkkkkkkkkkkelggggggggggggggppoooozzzaaaaaaazzqqqqqqqqqqqqiiiioooooooopeeeeemccvvvrrrkkkkffffqabbbbbbbbqqqjjjjjjttiiiissssssffffffggggcccrrrrrjjjjjjjpawwwwrggggggggggllllllvvvvvviiyyyggxxxzggvvhvhhhhhlllllllllllllllllbrrsssssaddbbbbbbbbbbbbbbbbbbbbbbbboaaaaaaaqbbbbbbbnnnnnaaaaaaaaapqqqqqqqqqqqqqgglllwwwwwwwwwnnnnwwwwwiiiiilllwwhhhhhhhhhhhhhppppppppppkkkkqqqqqqqqqqqqqqqqqkxxxxxssiikkjjjjjkooooooooooottttttthhhhhhhhccccccccccceccmmrrrrrdddddddduuuuuuuuukkibbxxxxxxxxxxmmmqqqqqqqqqqqgggzzzzhhiiyyyyhhhhhhhxx
 	s := []string{
-		"abbcccxx",
-		"zzzzzz",
+		"abbcccaa",
+		"zzzzz",
 		"hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhdllljbbbbiiiiiiiiiipppaaaaaaaqmmsssssspkkkkkkkkkkkelggggggggggggggppoooozzzaaaaaaazzqqqqqqqqqqqqiiiioooooooopeeeeemccvvvrrrkkkkffffqabbbbbbbbqqqjjjjjjttiiiissssssffffffggggcccrrrrrjjjjjjjpawwwwrggggggggggllllllvvvvvviiyyyggxxxzggvvhvhhhhhlllllllllllllllllbrrsssssaddbbbbbbbbbbbbbbbbbbbbbbbboaaaaaaaqbbbbbbbnnnnnaaaaaaaaapqqqqqqqqqqqqqgglllwwwwwwwwwnnnnwwwwwiiiiilllwwhhhhhhhhhhhhhppppppppppkkkkqqqqqqqqqqqqqqqqqkxxxxxssiikkjjjjjkooooooooooottttttthhhhhhhhccccccccccceccmmrrrrrdddddddduuuuuuuuukkibbxxxxxxxxxxmmmqqqqqqqqqqqgggzzzzhhiiyyyyhhhhhhhxx",
 	}
 	sum := countHomogenous(s[1])
