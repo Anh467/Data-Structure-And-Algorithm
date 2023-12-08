@@ -2,12 +2,10 @@ package main
 
 import "fmt"
 
-/*
-	complexity O(n^2)
-*/
-func InsertionSort(arr []int) {
+func BinaryInsertionSort(arr []int) {
 	for i := 1; i < len(arr); i++ {
 		j := i
+
 		for j > 0 {
 			if j <= 0 {
 				break
@@ -23,9 +21,7 @@ func InsertionSort(arr []int) {
 		}
 	}
 }
+
 func main() {
-	a := []int{12, 11, 13, 5, 6}
-	fmt.Print(a)
-	InsertionSort(a)
-	fmt.Print(a)
+	fmt.Print("hi")
 }
